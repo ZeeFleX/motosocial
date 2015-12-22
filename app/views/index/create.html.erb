@@ -1,0 +1,7 @@
+<h2>Страница создания</h2>
+<ul>
+  <% @tests.each do |test| %>
+    <li><%= test %></li>
+  <% end %>
+  <%= link_to 'На главную', controller: 'index' %>
+</ul>
