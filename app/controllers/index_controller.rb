@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-    @user = User.all().first
+    
   end
 
   def create
