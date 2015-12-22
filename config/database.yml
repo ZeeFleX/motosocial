@@ -9,22 +9,22 @@ default: &default
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: motosocial
+  database: moto
   pool: 5
-  username: root
-  password:
+  username: moto
+  password: msTrO
 
 development:
   <<: *default
-  database: motosocial
+  database: moto
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: motosocial
+  database: moto
 
 production:
   <<: *default
-  database: motosocial
+  database: moto
