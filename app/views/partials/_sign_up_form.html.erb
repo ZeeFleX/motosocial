@@ -1,0 +1,66 @@
+<div class="modal modal-signup fade" id="modal__signup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h3>Регистрация</h3>
+          </div>
+          <div class="modal-body">
+          <%= form_for(User.new, as: :user, html: {class: "form-horizontal"}, url: registration_path(:user)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="field form-group">
+              <%= f.label :email, class: "col-sm-3 control-label" %>
+              <div class="col-md-9">
+                <%= f.email_field :email, autofocus: true,  class: "form-control" %>
+              </div>
+            </div>
+            <%= fields_for Profile.new do |p| %>
+              <div class="field form-group">
+                <%= p.label "Имя", class: "col-sm-3 control-label" %>
+                <div class="col-md-9">
+                  <%= p.text_field :firstname, autofocus: true, class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="field form-group">
+                <%= p.label "Фамилия", class: "col-sm-3 control-label" %>
+                <div class="col-md-9">
+                  <%= p.text_field :surname, autofocus: true, class: "form-control" %>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="field form-group">
+              <%= f.label "Пароль", class: "col-sm-3 control-label" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+              <div class="col-md-9">
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label "Подтвердите пароль", class: "col-sm-3 control-label" %>
+              <div class="col-md-9">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="actions">
+              <%= f.submit "Зарегистрироваться",  class: "btn btn-success pull-right" %>
+            </div>
+            <% end %>
+            <div style="clear:both"><div>
+              <br />
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

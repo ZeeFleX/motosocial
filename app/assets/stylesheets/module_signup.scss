@@ -1,0 +1,14 @@
+#modal__signup, #modal__signin{
+  .modal-content{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    .close{
+      margin-top: 7px;
+      margin-right: 4px;
+    }
+    h3{
+      margin:0;
+      padding:0;
+    }
+  }
+}
